@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="siru.md.mapper.PagingMapper">
+
+	<select id="selectPerPage" resultType="Paging" parameterType="PagingVo">
+	    <![CDATA[
+		select * from (select ROWNUM rnum, aa.* from (select * from PAGING order by SEQ desc) aa) where rnum between #{start} and #{last}
+		]]>
+	</select>
+	<select id="selectCount" resultType="long">
+		select COUNT(SEQ) from PAGING
+	</select>
+	<select id="selectBySeq" resultType="Paging" parameterType="long">
+	    select * from PAGING where SEQ=#{seq}
+	</select>
+
+	<insert id="insert" parameterType="Paging">
+	     insert into PAGING(SEQ, SUBJECT) values(PAGING_SEQ.nextval, #{subject})
+	</insert>
+
+	<delete id="delete" parameterType="long">
+	     delete from PAGING where SEQ=#{seq}
+	</delete>
+	
+	<delete id="deleteAll" parameterType="long">
+	     delete from PAGING
+	</delete>
+	
+</mapper>

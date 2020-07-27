@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+   <typeAliases>
+   	   <typeAlias alias="Address" type="siru.md.domain.Address"/>
+   	   <typeAlias alias="Board" type="siru.md.domain.Board"/>
+   	   <typeAlias alias="BoardVo" type="siru.md.domain.BoardVo"/>
+   	   <typeAlias alias="MyBoardVo" type="siru.md.domain.MyBoardVo"/>
+   	   <typeAlias alias="Paging" type="siru.md.domain.Paging"/>
+   	   <typeAlias alias="PagingVo" type="siru.md.domain.PagingVo"/>
+   	   <typeAlias alias="Files" type="siru.md.domain.Files"/>
+   </typeAliases>
+   <mappers>
+   	   <mapper resource="siru/md/mapper/AddressMapper1.xml"/>
+   	   <mapper resource="siru/md/mapper/AddressMapper2.xml"/>
+   	   <mapper resource="siru/md/mapper/BoardMapper.xml"/>
+   	   <mapper resource="siru/md/mapper/BoardMapper1.xml"/>
+   	   <mapper resource="siru/md/mapper/PagingMapper.xml"/>
+   	   <mapper resource="siru/md/mapper/MyBoardMapper.xml"/>
+   </mappers>
+</configuration>
+
